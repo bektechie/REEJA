@@ -36,9 +36,10 @@ app.get("/author", (req, res) => {
     res.render("author", {user: user});
 })
 
-app.get("/", function(req, res) {
+app.get("/haridlar", function(req, res) {
     res.render("harid");
 });
+
 
 const server = http.createServer(app);
 let PORT = 3000;
