@@ -1,23 +1,30 @@
 const http = require("http");
-const { console } = require("inspector");
-const mongodb = require("mongodb");
+const { MongoClient } = require("mongodb");
 
-let db;
-const connectionString = "mongodb+srv://Abdulaziz2903:Abdulaziz2903@cluster0.dah6f2g.mongodb.net/REEJA";
+// MongoDB Atlas connection string
+const uri = "mongodb+srv://Abdulaziz2903:Abdulaziz2903@cluster0.dah6f2g.mongodb.net/REEJA?retryWrites=true&w=majority&appName=Cluster0";
 
-mongodb.connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}, (err, client) => {
-    if (err) {
-        console.log("Error on connection mongodb");
-    } else {
-        console.log("Mongodb connected sucessfully")
-        const app = require("./app");
-        const server = http.createServer(app);
-        let PORT = 3000;
-        server.listen(PORT, function() {
-            console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`);
-        });
-    }
-});
+const client = new MongoClient(uri, { tls: true });
+
+async function startServer() {
+  try {
+    await client.connect();
+    console.log("✅ Connected to MongoDB Atlas");
+
+    const db = client.db("REEJA"); // select your database
+
+    const app = require("./app");
+    const server = http.createServer(app);
+    const PORT = 3000;
+
+    server.listen(PORT, () => {
+      console.log(`🚀 Server running at http://localhost:${PORT}`);
+    });
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err);
+    process.exit(1);
+  }
+}
+
+startServer();
+
