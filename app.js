@@ -1,4 +1,4 @@
-onsole.log("Web serverni boshlash");
+console.log("Web serverni boshlash");
 
 const express = require('express');
 const res = require('express/lib/response');
@@ -37,17 +37,30 @@ app.set("view engine", "ejs");
 
 // Section - 4 (Routing)
 
+// app.post("/create-item", (req, res) => {
+//     console.log("User entered /create-item");
+//     const new_reja = req.body.reja; 
+//     db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
+//         if(err) {
+//             console.log(err);
+//             res.end("Somthing went wrong"); 
+//         } else {
+//             res.end("Successfuly added");
+//         }
+//     });
+// });
+
 app.post("/create-item", (req, res) => {
-    console.log("User entered /create-item");
-    const new_reja = req.body.reja; 
-    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-        if(err) {
-            console.log(err);
-            res.end("Somthing went wrong"); 
-        } else {
-            res.end("Successfuly added");
-        }
-    });
+  console.log(req.body);
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({reja:new_reja},(err,data)=>{
+    if (err) {
+      console.log(err)
+      res.end("something went wrong");
+    }else {
+      res.end("successfully addeed")
+    }
+  });
 });
 
 app.get('/author', (req, res) => {
@@ -55,17 +68,19 @@ app.get('/author', (req, res) => {
 })
 
 app.get("/", function(req, res) {
-    console.log("User entered /")
-    db.collection("plans").find().toArray( (err, data) => {
-        if(err) {
-            console.log(err);
-            res.end("Somthing went wrong")
-        } else {
-            console.log(data);
-            res.render('reja', { items: data  });
-        }
-    });
+  db.collection("plans")
+  .find()
+  .toArray((err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("something went wrong");
+    } else{
+      console.log(data);
+      res.render("reja",{ items: data})
+    }
+  });
 });
+    
 
 
 module.exports = app;
