@@ -55,7 +55,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: none;
 }
 
 /* left_1-1 inside left_1 */
@@ -67,7 +67,7 @@
     width: 156px;
     height: 143px;
     margin-bottom: 30px;
-    background-color: aqua;  /* box color */
+    background-color: none;  /* box color */
 }
 
 /* marginer */
@@ -105,18 +105,137 @@
     width: 221px;
     height: 126px;
     margin-left: 44px;
-    background-color: aqua;
+}
+.main_frame .left_frame .left_2 {
+  position: relative;
+  width: 221px;
+  height: 126px;
+  margin-left: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-/* left_3 box */
-.main_frame .left_3 {
-    position: relative;
-    width: 220px;
-    height: 153px;
-    margin-top: 25px;
-    margin-left: 45px;
-    background-color: aqua;
+.main_frame .left_frame .left_2 .left_2_info {
+  position: relative;
+  width: 220px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+.main_frame .left_frame .left_2 .left_2_info span {
+  position: relative;
+  width: 75px;
+  height: 25px;
+  background-color: #ffb400;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #767676;
+}
+
+.main_frame .left_frame .left_2 .left_2_info p {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  color: #2b2b2b;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #767676;
+}
+
+.main_frame .left_frame .left_2 .left_2_info .freelance {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  color: #28a745;
+  font-size: 16px;
+}
+
+
+/* left_3 box */
+.main_frame .left_frame .left_3 {
+  position: relative;
+  width: 220px;
+  height: 153px;
+  margin-left: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main_frame .left_frame .left_3 strong {
+  width: 200px;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.main_frame .left_frame .left_3 .left_3_info {
+  position: relative;
+  width: 220px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main_frame .left_frame .left_3 .left_3_info span {
+  width: 60px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  color: #767676;
+}
+
+.main_frame .left_frame .left_3 .left_3_info p {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  color: #767676;
+}
+
+.left_info_margin {
+  width: 100%;
+  border: 2px solid #ffb400;
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.left_info_margin .margin_line_1 {
+  border: 2px solid #ffb400;
+}
+
+.left_info_margin .margin_line_2 {
+  width: 80%;
+  border: 2px solid #ffb400;
+}
+
+.left_info_margin .margin_line_3 {
+  width: 60%;
+  border: 2px solid #ffb400;
+}
+
 
 /* left_4 box */
 .main_frame .left_4 {
@@ -141,4 +260,33 @@
 .profile-img{
     margin: 10px;
     margin-right: 20%;
+}
+
+.left-icons i {
+  font-size: 24px;          /* icon size */
+  margin-right: 10px;       /* spacing between icons */
+  transition: transform 0.2s, color 0.2s;
+  color: black;             /* icon color */
+  border-radius: 50%;       /* circular background */
+  background: #ffb400;      /* background color */
+  padding: 5px;             /* space inside circle */
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,0.25)); /* shadow */
+}
+
+.left-icons i:hover {
+  transform: scale(1.2);
+  color: white; /* hover color */
+}
+
+
+.left-icons i:hover {
+  transform: scale(1.2); /* hover effect */
+}
+
+
+.icons{
+    position: relative;
+    left: 29.17%;
+    right: 27.08%;
+    margin-top: 5.86%;
 }

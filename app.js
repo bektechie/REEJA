@@ -1,3 +1,4 @@
+console.log("Web serverni boshlash");
 const express = require("express");
 
 module.exports = function (db) {
@@ -15,7 +16,7 @@ module.exports = function (db) {
 
   // Routes
 
-  // Create user
+  // Create item
   app.post("/create-item", async (req, res) => {
     try {
       const result = await usersCollection.insertOne(req.body);
@@ -28,7 +29,8 @@ module.exports = function (db) {
 
   // Author page
   app.get("/author", async (req, res) => {
-    const user = await usersCollection.findOne({}) || { name: "No user", email: "No email" };
+    // Default object if collection is empty
+    const user = await usersCollection.findOne({}) || { name: "STEVE", email: "MITSTEVe.com" };
     res.render("author", { user });
   });
 

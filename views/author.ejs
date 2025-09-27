@@ -26,26 +26,107 @@
           </div>
 
           <!-- User Name -->
-          <div class="left_1-2"><%= user?.name || "No user found" %></div>
+          <div class="left_1-2"><%= (user && user.name) ? user.name : "STEVE" %></div>
+         <div class="left-3">
+  <div class="left-icons">
+    <a href="https://instagram.com" target="_blank">
+      <i class="icons fa-instagram fab"></i>
+    </a>
+    <a href="https://facebook.com" target="_blank">
+      <i class="icons fa-facebook fab"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank">
+      <i class="icons fa-twitter fab"></i>
+    </a>
+    <a href="https://linkedin.com" target="_blank">
+      <i class="icons fa-linkedin fab"></i>
+    </a>
+    <a href="https://youtube.com" target="_blank">
+      <i class="icons fa-youtube fab"></i>
+    </a>
+  </div>
+</div>
 
-          <!-- Icons -->
-          <div class="left_1-3">
-            <div class="left-icons">
-              <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-              <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-              <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+</div> <!-- end left-3 -->
+<div class="marginer"></div>
+          <div class="left_2">
+            <div class="left_2_info">
+              <span>Age</span>
+              <p><%=user.age%></p>
+            </div>
+            <div class="left_2_info">
+              <span>Residence</span>
+              <p><%=user.residence%></p>
+            </div>
+            <div class="left_2_info">
+              <span>Freelance</span>
+              <p class="freelance"><%=user.freelance%></p>
+            </div>
+            <div class="left_2_info">
+              <span>Address</span>
+              <p><%=user.adress%></p>
             </div>
           </div>
-
-        </div> <!-- end left_1 -->
-
-        <div class="marginer"></div>
-        <div class="left_2"></div>
-        <div class="marginer"></div>
-        <div class="left_3"></div>
-        <div class="marginer"></div>
-        <div class="left_4"></div>
+          <div class="marginer"></div>
+          <div class="left_3">
+            <strong>Languages</strong>
+            <div class="left_3_info">
+              <span>Uzbek</span>
+              <p>100%</p>
+            </div>
+            <div class="left_info_margin">
+              <div class="margin_line_1"></div>
+            </div>
+            <div class="left_3_info">
+              <span>Korean</span>
+              <p>80%</p>
+            </div>
+            <div class="left_info_margin">
+              <div class="margin_line_2"></div>
+            </div>
+            <div class="left_3_info">
+              <span>English</span>
+              <p>60%</p>
+            </div>
+            <div class="left_info_margin">
+              <div class="margin_line_3"></div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_4">
+            <strong>Skills</strong>
+            <div class="left_4_info">
+              <span>HTML</span>
+              <p>90%</p>
+            </div>
+            <div class="left_info_margin">
+              <div class="margin_line_4_1"></div>
+            </div>
+            <div class="left_4_info">
+              <span>CSS</span>
+              <p>85%</p>
+            </div>
+            <div class="left_info_margin">
+              <div class="margin_line_4_2"></div>
+            </div>
+            <div class="left_4_info">
+              <span>Js</span>
+              <p>80%</p>
+            </div>
+            <div class="left_info_margin">
+              <div class="margin_line_4_3"></div>
+            </div>
+            <div class="left_4_info">
+              <span>PHP</span>
+              <p>75%</p>
+            </div>
+            <div class="left_info_margin">
+              <div class="margin_line_4_4"></div>
+            </div>
+            <div class="left_4_info">
+              <span>WordPress</span>
+              <p>85%</p>
+            </div>
         <div class="marginer"></div>
         <div class="left_5"></div>
         <div class="marginer"></div>
