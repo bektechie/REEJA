@@ -1,43 +1,71 @@
-console.log("Web serverni boshlash");
-const express = require("express");
+onsole.log("Web serverni boshlash");
 
-module.exports = function (db) {
-  const app = express();
-  const usersCollection = db.collection("users");
+const express = require('express');
+const res = require('express/lib/response');
+const app = express();  // app --> Object
+const fs = require('fs');
 
-  // Middleware
-  app.use(express.static("public"));
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: true }));
 
-  // Views
-  app.set("views", "views");
-  app.set("view engine", "ejs");
+// MongoDB Connection 
+const db = require("./server").db();
 
-  // Routes
 
-  // Create item
-  app.post("/create-item", async (req, res) => {
-    try {
-      const result = await usersCollection.insertOne(req.body);
-      res.json({ success: true, id: result.insertedId });
-    } catch (err) {
-      console.error("Insert error:", err);
-      res.status(500).json({ success: false, error: err });
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+    if(err) {
+        console.log("ERROR:", err);
+    } else {
+        user = JSON.parse(data);
     }
-  });
+})
 
-  // Author page
-  app.get("/author", async (req, res) => {
-    // Default object if collection is empty
-    const user = await usersCollection.findOne({}) || { name: "STEVE", email: "MITSTEVe.com" };
-    res.render("author", { user });
-  });
 
-  // Home page
-  app.get("/", (req, res) => {
-    res.render("reja");
-  });
+// Section - 1 (Enterence)
 
-  return app;
-};
+app.use(express.static("public"));
+app.use(express.json());  // json format --> Object
+app.use(express.urlencoded({extended: true}));
+
+// Section - 2 (Session)
+
+
+
+// Section - 3 (Views - BSSR)
+
+app.set("views", "views");
+app.set("view engine", "ejs");
+
+// Section - 4 (Routing)
+
+app.post("/create-item", (req, res) => {
+    console.log("User entered /create-item");
+    const new_reja = req.body.reja; 
+    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
+        if(err) {
+            console.log(err);
+            res.end("Somthing went wrong"); 
+        } else {
+            res.end("Successfuly added");
+        }
+    });
+});
+
+app.get('/author', (req, res) => {
+    res.render('author', { user: user });
+})
+
+app.get("/", function(req, res) {
+    console.log("User entered /")
+    db.collection("plans").find().toArray( (err, data) => {
+        if(err) {
+            console.log(err);
+            res.end("Somthing went wrong")
+        } else {
+            console.log(data);
+            res.render('reja', { items: data  });
+        }
+    });
+});
+
+
+module.exports = app;
