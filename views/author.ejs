@@ -4,55 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/main.css">
+
+    <!-- Font Awesome (for social icons) -->
     <link 
-    
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-         rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        rel="stylesheet"
     />
+
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <title>PORTFOLIO</title>  
-<div class="frame">
-  <div class="main_frame">
+</head>
+<body>
+  <div class="frame">
+    <div class="main_frame">
+      <div class="left_frame">
+        <div class="left_1">
 
-    <!-- LEFT COLUMN -->
-    <div class="left_frame">
+          <!-- Profile Image -->
+          <div class="left_1-1">
+            <img src="/profile.png" alt="Profile Photo" class="profile-img" width="156" height="142">
+          </div>
 
-  <!-- Box 1: Image + Name -->
-<div class="left_1">
-  <div class="left_1-1">
-    <img src="/profilllimage.png" width="156" height="142" alt="Person">
-  </div>
-</div>
+          <!-- User Name -->
+          <div class="left_1-2"><%= user?.name || "No user found" %></div>
 
+          <!-- Icons -->
+          <div class="left_1-3">
+            <div class="left-icons">
+              <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+              <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            </div>
+          </div>
 
-  <!-- Name -->
-  <div class="left_1-2">
-    <%= user.name %>
-  </div>
-</div>
+        </div> <!-- end left_1 -->
 
+        <div class="marginer"></div>
+        <div class="left_2"></div>
+        <div class="marginer"></div>
+        <div class="left_3"></div>
+        <div class="marginer"></div>
+        <div class="left_4"></div>
+        <div class="marginer"></div>
+        <div class="left_5"></div>
+        <div class="marginer"></div>
 
-  <!-- Other boxes -->
-  <div class="left_1-3"></div>
-  <div class="left-icons"></div>
+      </div> <!-- end left_frame -->
 
-  <div class="marginer"></div>
-  <div class="left_2"></div>
-  <div class="marginer"></div>
-  <div class="left_3"></div>
-  <div class="marginer"></div>
-  <div class="left_4"></div>
-  <div class="marginer"></div>
-  <div class="left_5"></div>
+      <div class="midd_frame"></div>
+      <div class="right_frame"></div>
 
-</div>
-
-    <!-- MIDDLE AND RIGHT COLUMNS -->
-    <div class="midd_frame"></div>
-    <div class="right_frame"></div>
-
-  </div>
-</div>
-
-
+    </div> <!-- end main_frame -->
+  </div> <!-- end frame -->
+</body>
 </html>

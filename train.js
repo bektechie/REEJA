@@ -187,7 +187,7 @@ function raqamtop(input) {
 }
 
 // Correct call with string
-raqamtop("oiu988998998"); // Output: Total digits: 4
+raqamtop("Abdulaziz7723"); // Output: Total digits: 4
 
 
 

@@ -2,23 +2,27 @@ const http = require("http");
 const { MongoClient } = require("mongodb");
 
 // MongoDB Atlas connection string
-const uri = "mongodb+srv://Abdulaziz2903:Abdulaziz2903@cluster0.dah6f2g.mongodb.net/REEJA?retryWrites=true&w=majority&appName=Cluster0";
+const connectionString =
+  "mongodb+srv://Abdulaziz2903:Abdulaziz2903@cluster0.dah6f2g.mongodb.net/REEJA";
 
-const client = new MongoClient(uri, { tls: true });
+const client = new MongoClient(connectionString);
 
 async function startServer() {
   try {
+    // Connect to MongoDB
     await client.connect();
-    console.log("✅ Connected to MongoDB Atlas");
+    console.log("✅ MongoDB connected successfully");
 
-    const db = client.db("REEJA"); // select your database
+    const db = client.db("REEJA");
 
-    const app = require("./app");
+    // Pass db to app.js
+    const app = require("./app")(db);
+
+    // Start server
     const server = http.createServer(app);
     const PORT = 3000;
-
     server.listen(PORT, () => {
-      console.log(`🚀 Server running at http://localhost:${PORT}`);
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
     });
   } catch (err) {
     console.error("❌ MongoDB connection error:", err);
@@ -27,4 +31,3 @@ async function startServer() {
 }
 
 startServer();
-

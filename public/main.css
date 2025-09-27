@@ -1,4 +1,4 @@
-.frame{
+.frame {
     position: relative;
     width: 100%;
     height: 100%;
@@ -8,10 +8,11 @@
     justify-content: center;
     background-color: #e5e5e5;
 }
-.main_frame{
+
+.main_frame {
     position: relative;
     width: 1440px; 
-    height: 1312;
+    height: 1312px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -36,7 +37,6 @@
     margin-right: 27px;
     display: flex;
     flex-direction: column;
-    
 }
 
 .right_frame {
@@ -45,17 +45,17 @@
     height: 1315px;
 }
 
-.main_frame.left_1 {
-      position: relative;
-      width: 228px;
-      height: 267px; /* fixed typo */
-      margin-top: 50px;
-      margin-left: 37px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: aqua;
+.left_1 {
+    position: relative;
+    width: 228px;
+    height: 267px; /* fixed typo */
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
 }
 
 /* left_1-1 inside left_1 */
@@ -68,7 +68,6 @@
     height: 143px;
     margin-bottom: 30px;
     background-color: aqua;  /* box color */
-    /* remove margin-left */
 }
 
 /* marginer */
@@ -137,4 +136,9 @@
     margin-top: 25px;
     margin-left: 45px;
     background-color: aqua;
+}
+
+.profile-img{
+    margin: 10px;
+    margin-right: 20%;
 }

@@ -1,44 +1,41 @@
-console.log("web Serverni Boshlash");
 const express = require("express");
-const app = express();
-const fs = require("fs");
 
+module.exports = function (db) {
+  const app = express();
+  const usersCollection = db.collection("users");
 
+  // Middleware
+  app.use(express.static("public"));
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
 
-let user;
-fs.readFile("database/user.json", "utf8", (err, data) => {
-    if(err) {
-        console.log("ERROR:", err);
-    } else {
-        user = JSON.parse(data);
+  // Views
+  app.set("views", "views");
+  app.set("view engine", "ejs");
+
+  // Routes
+
+  // Create user
+  app.post("/create-item", async (req, res) => {
+    try {
+      const result = await usersCollection.insertOne(req.body);
+      res.json({ success: true, id: result.insertedId });
+    } catch (err) {
+      console.error("Insert error:", err);
+      res.status(500).json({ success: false, error: err });
     }
-});
+  });
 
+  // Author page
+  app.get("/author", async (req, res) => {
+    const user = await usersCollection.findOne({}) || { name: "No user", email: "No email" };
+    res.render("author", { user });
+  });
 
-//1 Kirish code
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-
-//2 Sesion code
-
-//3 Views code
-app.set("views", "views");
-app.set("view engine", "ejs");
-
-//4 Routing code
-app.post("/create-item", (req, res) => {
-    console.log(req.body);
-    res.json({test: "success"})
-})
-
-app.get("/author", (req, res) => {
-    res.render("author", {user: user});
-})
-
-app.get("/", function(req, res) {
+  // Home page
+  app.get("/", (req, res) => {
     res.render("reja");
-});
+  });
 
-
-module.exports = app;
+  return app;
+};
