@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/main.css">
-
-    <!-- Font Awesome (for social icons) -->
-    <link 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
-        rel="stylesheet"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/main.css" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Added Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"
+      integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
 
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <title>PORTFOLIO</title>  
-</head>
-<body>
-  <div class="frame">
-    <div class="main_frame">
-      <div class="left_frame">
-        <div class="left_1">
-
-          <!-- Profile Image -->
-          <div class="left_1-1">
-            <img src="/profile.png" alt="Profile Photo" class="profile-img" width="156" height="142">
+  <body style="background-color: #b8bbd1">
+    <div class="frame">
+      <div class="main_frame">
+        <div class="left_frame">
+          <div class="left_1">
+            <div class="left_1_img">
+           <img src="/profile.png" width="156" height="142" alt="">
+            </div>
+            <div class="left_1_info">
+              <span><%=user.name%></span>
+              <p><%=user.profession%></p>
+            </div>
+            <div class="left_1_icons">
+              <a class="link_href" href="#">
+                <div class="icon"><i class="bi bi-facebook"></i></div>
+              </a>
+              <a class="link_href" href="#">
+                <div class="icon"><i class="bi bi-instagram"></i></div>
+              </a>
+              <a class="link_href" href="#">
+                <div class="icon"><i class="bi bi-twitter"></i></div>
+              </a>
+              <a class="link_href" href="#">
+                <div class="icon"><i class="bi bi-linkedin"></i></div>
+              </a>
+              <a class="link_href" href="#">
+                <div class="icon"><i class="bi bi-youtube"></i></div>
+              </a>
+              <a class="link_href" href="#">
+                <div class="icon"><i class="bi bi-dribbble"></i></div>
+              </a>
+            </div>
           </div>
 
-          <!-- User Name -->
-          <div class="left_1-2"><%= (user && user.name) ? user.name : "STEVE" %></div>
-         <div class="left-3">
-  <div class="left-icons">
-    <a href="https://instagram.com" target="_blank">
-      <i class="icons fa-instagram fab"></i>
-    </a>
-    <a href="https://facebook.com" target="_blank">
-      <i class="icons fa-facebook fab"></i>
-    </a>
-    <a href="https://twitter.com" target="_blank">
-      <i class="icons fa-twitter fab"></i>
-    </a>
-    <a href="https://linkedin.com" target="_blank">
-      <i class="icons fa-linkedin fab"></i>
-    </a>
-    <a href="https://youtube.com" target="_blank">
-      <i class="icons fa-youtube fab"></i>
-    </a>
-  </div>
-</div>
-
-</div> <!-- end left-3 -->
-<div class="marginer"></div>
+          <div class="marginer"></div>
           <div class="left_2">
             <div class="left_2_info">
               <span>Age</span>
@@ -67,7 +84,8 @@
               <p><%=user.adress%></p>
             </div>
           </div>
-<div class="marginer"></div>
+
+          <div class="marginer"></div>
           <div class="left_3">
             <strong>Languages</strong>
             <div class="left_3_info">
@@ -92,7 +110,8 @@
               <div class="margin_line_3"></div>
             </div>
           </div>
- <div class="marginer"></div>
+
+          <div class="marginer"></div>
           <div class="left_4">
             <strong>Skills</strong>
             <div class="left_4_info">
@@ -131,13 +150,41 @@
               <div class="margin_line_4_5"></div>
             </div>
           </div>
-        <div class="marginer"></div>
-        <div class="left_5"></div>
-        <div class="marginer"></div>
 
-      </div> <!-- end left_frame -->
+          <div class="marginer"></div>
+          <div class="left_5">
+            <strong>Extra Skills</strong>
+            <div class="left_5_info">
+              <div class="left_5_icon">
+                <img src="icon/extra_skills_icon.svg" alt="" />
+              </div>
+              <span>Bootstrap, Materialize</span>
+            </div>
+            <div class="left_5_info">
+              <div class="left_5_icon">
+                <img src="icon/extra_skills_icon.svg" alt="" />
+              </div>
+              <span>Stylus, Sass, Less</span>
+            </div>
+            <div class="left_5_info">
+              <div class="left_5_icon">
+                <img src="icon/extra_skills_icon.svg" alt="" />
+              </div>
+              <span>Gulp, Webpack, Grunt</span>
+            </div>
+            <div class="left_5_info">
+              <div class="left_5_icon">
+                <img src="icon/extra_skills_icon.svg" alt="" />
+              </div>
+              <span>GIT Knowledge</span>
+            </div>
+          </div>
 
-     <div class="middle_frame">
+          <div class="marginer"></div>
+        </div>
+
+        <!-- Middle Frame -->
+        <div class="middle_frame">
           <div class="middle_top">
             <div class="middle_top_info">
               <span>Doctor neurologists in OHSU Hospital</span>
@@ -148,16 +195,121 @@
               </p>
               <button>
                 <a>HIRE ME</a>
+                <img src="icon/hire_me.svg" alt="" />
               </button>
-           <div class="middle_top_img">
-            <img src="/profile.png" alt="Profile Photo">
-           </div>
+            </div>
+            <div class="middle_top_img">
+              <img src="/profile.png" class="middle_top_img" alt="" />
 
+            </div>
+            <div class="midd_icon_1">
+              <img src="/icons/Ellipse_15.svg.url" alt="" />
+            </div>
+            <div class="midd_icon_2">
+              <img src="/icons/RECTANGLE_52.svg" alt="" />
+            </div>
+            <div class="midd_icon_3">
+              <img src="/icons/RECTANGLE_52.svg" alt="" />
+            </div>
+            <div class="midd_icon_4">
+              <img src="/icons/RECTANGLE_52.svg" alt="" />
+            </div>
+            <div class="midd_icon_5">
+              <img src="icon/Ellipse_15.svg" alt="" />
+            </div>
+            <div class="midd_icon_2">
+              <img src="icon/Rectangle_52.svg" alt="" />
+            </div>
+          </div>
 
+          <div class="middle_bottom">
+            <div class="middle_bottom_info">
+              <span>My Services</span>
+              <p>
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit. lorem
+                ipsum
+              </p>
+            </div>
+            <div class="middle_bottom_boxes">
+              <div class="middle_bottom_box">
+                <div class="bottom_box_img">
+                  <img src="icon/icons_coding.png" alt="" />
+                </div>
+                <span>Web Development</span>
+                <p>Blog, E-Commerce</p>
+              </div>
+              <div class="middle_bottom_box">
+                <div class="bottom_box_img">
+                  <img src="icon/Icons_illustration.png" alt="" />
+                </div>
+                <span>UI/UX Design</span>
+                <p>Mobile App, Website Design</p>
+              </div>
+              <div class="middle_bottom_box">
+                <div class="bottom_box_img">
+                  <img src="icon/Icons_Microphone.png" alt="" />
+                </div>
+                <span>Sound Design</span>
+                <p>Voice Over, Beat Making</p>
+              </div>
+              <div class="middle_bottom_box">
+                <div class="bottom_box_img">
+                  <img src="icon/Icons_game-development.png" alt="" />
+                </div>
+                <span>Game Design</span>
+                <p>Character Design, Props & Objects</p>
+              </div>
+              <div class="middle_bottom_box">
+                <div class="bottom_box_img">
+                  <img src="icon/Icons_Photographer.png" alt="" />
+                </div>
+                <span>Photography</span>
+                <p>Portrait, Product Photography</p>
+              </div>
+              <div class="middle_bottom_box" style="justify-content: inherit">
+                <span style="margin-top: 31px">Advertising</span>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+                  nulla diam in ac dictum a urna viverra morbi.
+                </p>
+                <a href="">Order Now ></a>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Right Frame -->
+        <div class="right_frame">
+          <div class="right_fram_icon_1">
+            <img src="/icons/Icons_Contact.png.url" alt="" />
+          </div>
+          <div class="right_fram_icon_2">
+            <img src="/icons/Pop_up.svg.url" alt="" />
+          </div>
+          <div class="right_fram_icon_3">
+            <img src="/icons/Icons_Home.svg.url" alt="" />
+          </div>
+          <div class="right_fram_icon">
+            <img src="/icons/file_code.svg.url" alt="" />
+          </div>
+          <div class="right_fram_icon">
+            <img src="/icons/Icons_coding.png.url" alt="" />
+          </div>
+          <div class="right_fram_icon">
+            <img src="/icons/Icons_Contact.png.url" alt="" />
+          </div>
+        </div>
+      </div>
 
-
-    </div> <!-- end main_frame -->
-  </div> <!-- end frame -->
-</body>
-</html>
+      <!-- Price Frame -->
+      <div class="price_frame">
+        <div class="price_info">
+          <span>Price Plans</span>
+          <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. lorem ipsum
+          </p>
+        </div>
+        <div class="price_boxes">
+          <div class="price_box"></div>

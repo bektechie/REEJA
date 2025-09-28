@@ -51,6 +51,7 @@ app.set("view engine", "ejs");
 // });
 
 app.post("/create-item", (req, res) => {
+  console.log("user entered /create-item");
   console.log(req.body);
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({reja:new_reja},(err,data)=>{
@@ -68,6 +69,7 @@ app.get('/author', (req, res) => {
 })
 
 app.get("/", function(req, res) {
+  console.log("user entered /");
   db.collection("plans")
   .find()
   .toArray((err, data) => {
