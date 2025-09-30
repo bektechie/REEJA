@@ -176,18 +176,72 @@
 // console.log(countLetter("a", "Abdulazizbek")); // 3
 
 
-function raqamtop(input) {
-    let count = 0;
-    for (let char of input) {
-        if (!isNaN(char) && char !== " ") {
-            count++;
-        }
+// function raqamtop(input) {
+//     let count = 0;
+//     for (let char of input) {
+//         if (!isNaN(char) && char !== " ") {
+//             count++;
+//         }
+//     }
+//     console.log("Total digits:", count);
+// }
+
+// // Correct call with string
+// raqamtop("Abdulaziz7723"); // Output: Total digits: 4
+
+class Shop {
+    // state
+    apple;
+    juice;
+    milk;
+
+    // constructor
+    constructor(apple, juice, milk) {
+        this.apple = apple;
+        this.juice = juice;
+        this.milk = milk;
+        this.time = { hour: 12, minute: 31 };
     }
-    console.log("Total digits:", count);
+
+    // methods
+    updateTime() {
+        this.time.minute += 5;
+        if (this.time.minute >= 60) {
+            this.time.minute -= 60;
+            this.time.hour++;
+        }
+        if (this.time.hour >= 24) this.time.hour -= 24; // wrap after midnight
+    }
+
+    qoldiq() {
+        console.log(`Hozir ${this.time.hour}:${this.time.minute.toString().padStart(2, "0")} da ${this.apple} ta apple, ${this.juice} ta juice va ${this.milk} L milk mavjud`);
+    }
+
+    sotish(apple = 0, juice = 0, milk = 0) {
+        this.apple = Math.max(0, this.apple - apple);
+        this.juice = Math.max(0, this.juice - juice);
+        this.milk = Math.max(0, this.milk - milk);
+        this.updateTime();
+    }
+
+    qabul(apple = 0, juice = 0, milk = 0) {
+        this.apple += apple;
+        this.juice += juice;
+        this.milk += milk;
+        this.updateTime();
+    }
 }
 
-// Correct call with string
-raqamtop("Abdulaziz7723"); // Output: Total digits: 4
+// Usage
+const myShop = new Shop(40, 50, 20);
+myShop.qoldiq();
 
+console.log("=======");
 
+myShop.sotish(15, 25, 5);
+myShop.qoldiq();
 
+console.log("=======");
+
+myShop.qabul(20, 30, 50);
+myShop.qoldiq();
