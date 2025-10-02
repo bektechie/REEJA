@@ -189,59 +189,70 @@
 // // Correct call with string
 // raqamtop("Abdulaziz7723"); // Output: Total digits: 4
 
-class Shop {
-    // state
-    apple;
-    juice;
-    milk;
+// class Shop {
+//     // state
+//     apple;
+//     juice;
+//     milk;
 
-    // constructor
-    constructor(apple, juice, milk) {
-        this.apple = apple;
-        this.juice = juice;
-        this.milk = milk;
-        this.time = { hour: 12, minute: 31 };
-    }
+//     // constructor
+//     constructor(apple, juice, milk) {
+//         this.apple = apple;
+//         this.juice = juice;
+//         this.milk = milk;
+//         this.time = { hour: 12, minute: 31 };
+//     }
 
-    // methods
-    updateTime() {
-        this.time.minute += 5;
-        if (this.time.minute >= 60) {
-            this.time.minute -= 60;
-            this.time.hour++;
-        }
-        if (this.time.hour >= 24) this.time.hour -= 24; // wrap after midnight
-    }
+//     // methods
+//     updateTime() {
+//         this.time.minute += 5;
+//         if (this.time.minute >= 60) {
+//             this.time.minute -= 60;
+//             this.time.hour++;
+//         }
+//         if (this.time.hour >= 24) this.time.hour -= 24; // wrap after midnight
+//     }
 
-    qoldiq() {
-        console.log(`Hozir ${this.time.hour}:${this.time.minute.toString().padStart(2, "0")} da ${this.apple} ta apple, ${this.juice} ta juice va ${this.milk} L milk mavjud`);
-    }
+//     qoldiq() {
+//         console.log(`Hozir ${this.time.hour}:${this.time.minute.toString().padStart(2, "0")} da ${this.apple} ta apple, ${this.juice} ta juice va ${this.milk} L milk mavjud`);
+//     }
 
-    sotish(apple = 0, juice = 0, milk = 0) {
-        this.apple = Math.max(0, this.apple - apple);
-        this.juice = Math.max(0, this.juice - juice);
-        this.milk = Math.max(0, this.milk - milk);
-        this.updateTime();
-    }
+//     sotish(apple = 0, juice = 0, milk = 0) {
+//         this.apple = Math.max(0, this.apple - apple);
+//         this.juice = Math.max(0, this.juice - juice);
+//         this.milk = Math.max(0, this.milk - milk);
+//         this.updateTime();
+//     }
 
-    qabul(apple = 0, juice = 0, milk = 0) {
-        this.apple += apple;
-        this.juice += juice;
-        this.milk += milk;
-        this.updateTime();
-    }
+//     qabul(apple = 0, juice = 0, milk = 0) {
+//         this.apple += apple;
+//         this.juice += juice;
+//         this.milk += milk;
+//         this.updateTime();
+//     }
+// }
+
+// // Usage
+// const myShop = new Shop(40, 50, 20);
+// myShop.qoldiq();
+
+// console.log("=======");
+
+// myShop.sotish(15, 25, 5);
+// myShop.qoldiq();
+
+// console.log("=======");
+
+// myShop.qabul(20, 30, 50);
+// myShop.qoldiq();
+
+
+function checkContent(item1, item2) {
+
+    return item1.split('').sort().join('') === item2.split('').sort().join('');
 }
 
-// Usage
-const myShop = new Shop(40, 50, 20);
-myShop.qoldiq();
-
-console.log("=======");
-
-myShop.sotish(15, 25, 5);
-myShop.qoldiq();
-
-console.log("=======");
-
-myShop.qabul(20, 30, 50);
-myShop.qoldiq();
+// Misollar
+console.log(checkContent("mitgroup", "gmtiprou")); 
+console.log(checkContent("superhero", "heroerpus"));       
+console.log(checkContent("henryford", "fordheirny"));    
