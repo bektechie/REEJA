@@ -247,12 +247,13 @@
 // myShop.qoldiq();
 
 
-function checkContent(item1, item2) {
+ 
 
-    return item1.split('').sort().join('') === item2.split('').sort().join('');
+function getReverse(str) {
+    return str.split('').reverse().join('');
 }
 
-// Misollar
-console.log(checkContent("mitgroup", "gmtiprou")); 
-console.log(checkContent("superhero", "heroerpus"));       
-console.log(checkContent("henryford", "fordheirny"));    
+console.log(getReverse("Abdulaziz"));
+console.log(getReverse("Muhammadali"));
+
+
